@@ -1,0 +1,112 @@
+body{
+    background-image:url(img/fondo.jpg);
+    font-family: sans-serif;
+}
+
+.container{
+    margin: auto;
+    background-color: white;
+    width: 800px;
+    padding: 30px;
+}
+ul, li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.slider{
+    position: relative;
+    width: 800px;
+    height: 300px;
+}
+ul.slider li{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    background-color: white;
+    transition-duration: 2s;
+}
+ul.slider li img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+ul.slider li:first-child{
+    opacity: 1;
+}
+
+ul.slider li:target{
+    opacity: 1;
+}
+
+.menu{
+    text-align: center;
+    margin: 20px;
+}
+.menu li{
+    display: inline-block;
+    text-align: center;
+}
+.menu li a{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: grey;
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    border-radius: 100%;
+}
+h1{
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-size: 40px;
+}
+button{ 
+  border: none;
+  
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.texto-encima{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 25px;
+}
+.textoencimados{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white; 
+    font-size: 25px;
+}
+.opciones{
+    font-family: 'Oswald', sans-serif;
+    color: black;
+    text-decoration-line: none;
+    font-size: 20px;
+}
+.logo{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+h3{
+    color: #000;
+    text-align: center;
+    font-family: 'Oswald';
+    
+}
+.imagen{
+    height: 50px;
+}

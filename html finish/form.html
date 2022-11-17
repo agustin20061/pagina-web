@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <title>
+        Formulario
+    </title>
+    <header>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <h1 class="titulo">BFSport</h1>
+        <center>
+            <a href="index.html">Inicio</a>
+        </center>
+    </header>
+        <main>
+
+            <form id="formulario">
+                <div class="form-group">
+                  <label for="nombre"> Nombre</label>
+                  <input name="nombre"type="text" class="form-control" id="nombre" placeholder="Nombre">
+                  
+                </div>
+
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input name="apellido" type="text" class="form-control" id="apellido" placeholder="apellido">
+                    
+                  </div>
+
+                  <div class="form-group">
+                    <label for="edad">Edad</label>
+                    <input name="edad"type="number" class="form-control" id="edad"  placeholder="Edad">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input name="email"type="email" class="form-control" id="email"  placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="telefono">Telefono</label>
+                    <input name="telefono"type="tel" class="form-control" id="telefono" placeholder="telefono">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="monto">Monto</label>
+                    <input name="monto"type="number" class="form-control" id="monto"  placeholder="$$">
+                    <small id="emailHelp" class="form-text text-muted"> 0,01-1.000</small>
+                  </div>
+                
+                  <button type="submit" class="btn btn-primary" onclick="enviarForm()">Submit</button>
+              </form>
+              
+              <script>
+               
+              $("#formulario").submit(function(event){
+                event.preventDefault(); // se debe colocar para que el formulario no se envie
+                $.ajax({
+                    type: "GET",
+                    url: "formulario.php",
+                    data:{monto:$("#monto").val(),telefono:$("#telefono").val(),nombre:$("#nombre").val(),apellido:$("#apellido").val(),email:$("#email").val(),edad:$("#edad").val()}
+                }).done(function (respuesta) {
+                    location.href="index.html";
+                    
+                });
+              })</script>
+            
+        </main>
+
+        <style>
+            form {
+                margin-left: 20%;
+                margin-right: 20%;
+            }
+        </style>
+   
+</html>
